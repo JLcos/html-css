@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover Examples</title>
+    <style>
+        div{
+            background-color: blue;
+            height: fit-content;
+            width: fit-content;
+            padding: 80px;
+            text-align: center;
+            color: white;
+        }
+        div > p {
+            display: none;
+        }
+        div:hover > p {
+            display: block ;
+        }
+        div:hover {
+            background-color: aqua;
+            outline: 3px dotted black;
+            padding: 90px;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.178);
+        }
+
+       
+    </style>
+</head>
+<body>
+    <div>
+        Teste
+        <p>Hidden Text</p>
+    </div>
+</body>
+</html>

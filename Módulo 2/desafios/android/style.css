@@ -1,0 +1,154 @@
+@font-face {
+  font-family: "android";
+  src: url(arquivos/fontes/idroid.otf);
+}
+
+:root {
+  --bgcolor: #fafab4;
+
+  --fontetitle: "android", cursive;
+  --fontepadrao: "Arial";
+  --fonteheader: "Bebas Neue";
+}
+
+/* 
+global = * {}
+*/
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background: var(--bgcolor);
+}
+
+header {
+  z-index: 2;
+  padding: 20px 0px;
+  text-align: center;
+  justify-items: center;
+  width: 100%;
+  background-image: linear-gradient(to bottom, green,darkgreen);
+  color: white;
+  font-family: var(--fontepadrao);
+}
+
+header > h1,
+header > p {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.637);
+}
+
+header p {
+  margin-bottom: 30px;
+}
+
+header a {
+  text-decoration: none;
+  font-size: 0.9em;
+}
+
+header h1 {
+  font-size: 3em;
+  font-family: var(--fonteheader);
+}
+
+nav {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+div.vid {
+  background-color: rgba(0, 255, 34, 0.644);
+  padding: 20px;
+  padding-bottom: 50%;
+  margin-bottom: 30px;
+
+  position: relative;
+}
+
+div.vid > iframe {
+  top: 5%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  position: absolute;
+}
+
+div a {
+  color: white;
+  padding: 10px;
+}
+
+div a:hover {
+  border-radius: 8px;
+  background-color: rgba(47, 255, 141, 0.363);
+  transition: ease-in-out;
+  transition-duration: 500ms;
+}
+
+
+main {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.377);
+  z-index: 1;
+  padding: 20px;
+  margin: auto;
+  max-width: 1000px;
+  min-width: 280px;
+  background-color: white;
+}
+
+
+main h1,
+h2 {
+  color: rgb(0, 43, 0);
+  font-family: var(--fontetitle);
+}
+
+main p {
+  font-family: var(--fontepadrao);
+}
+
+h1,
+p,
+img {
+  margin: 16px 0px;
+}
+
+aside {
+  border-radius: 8px;
+  background-color: rgba(0, 255, 0, 0.329);
+  padding: 10px;
+}
+
+aside > ul {
+  list-style-position: inside;
+  columns: 2;
+}
+
+aside > h3 {
+  background: linear-gradient(90deg, rgb(0, 255, 136), transparent);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+  width: 100%;
+}
+
+img.pq {
+  width: 50%;
+  margin: auto;
+  display: block;
+}
+
+footer {
+  color: white;
+  text-align: center;
+  padding: 10px;
+  background-color: green;
+  font-family: var(--fontepadrao);
+}
