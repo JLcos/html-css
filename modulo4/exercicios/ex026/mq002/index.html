@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media Queries</title>
+
+    <style>
+      /*Estilos Globais*/
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+      }
+
+      html {
+        background-color: #233eff;
+        text-align: center;
+      }
+
+      body {
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      /*Estilos Portrait*/
+
+      @media screen and (orientation: portrait) {
+      html {
+        background-image: url(../imagens/cev-portrait.jpg);
+        background-repeat: no-repeat;
+        background-size: max(80%, 80%);
+        background-position: left bottom;
+        background-attachment: fixed;
+      }
+      }
+
+      /* Estilos Landscape */
+
+      html {
+        background-image: url(../imagens/cev-landscape.jpg);
+        background-repeat: no-repeat;
+        background-size: max(80%, 80%);
+        background-position: left bottom;
+        background-attachment: fixed;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <h1>Media Queries</h1>
+  </body>
+</html>

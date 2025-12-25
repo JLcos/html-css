@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex025</title>
+
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        div {
+            justify-self: center;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            margin: 10px;
+            width: 400px;
+            height: 200px;
+            border: 0px solid rgb(0, 0, 0);
+            border-radius: 20px;
+            
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        input[type="text"] {
+            border: 0px;
+            border-bottom: 2px solid black;
+            border-radius: 0px;
+        }
+
+        input[type="color"] {
+            border: 0px;
+            border-radius: 0px;
+            width: 30px;
+            height: 30px;
+        }
+
+        input[type="submit"] {
+            border: 0px;
+            border-radius: 4px;
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: rgba(0, 0, 0, 0.651);
+            color: rgb(255, 255, 255); 
+            filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5));  
+            transition: 0.5s;
+            cursor: pointer;
+        }
+        input:focus {
+            outline: none;
+        }
+        
+    </style>
+
+</head>
+<body>
+    <h1>Meu primeiro formulário</h1>
+
+    <div>
+        <form action="cadastro.php" method="post" autocomplete="off">
+            <fieldset style="border: 1px solid black; border-radius: 10px;">
+                <legend>Dados Pessoais</legend>
+                <p><label for="nome">Nome: </label>
+                    <br>
+                    <input type="text" name="nome" id="nome" required placeholder="Ex: João">
+                </p>
+                <p><label for="sobrenome">Sobrenome: </label>
+                    <br>
+                    <input type="text" name="sobrenome" id="sobrenome" required placeholder="Ex: Lucas">
+                </p>
+                <p><label for="cor">Cor: </label>
+                    <input type="color" name="cor" id="cor" value="#000000">
+                </p>
+
+                <p><label for="idade">Idade: </label><input type="range" name="idade" id="idade" min="0" max="100" value="18"> </p>
+
+                <p>
+                    <input type="submit" value="Enviar">
+                </p>
+            </fieldset>
+        </form>
+    </div>
+
+    <h2>
+        <a href="form001.html">Proximo</a>
+    </h2>
+</body>
+</html>

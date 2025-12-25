@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Query</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="media-query.css">
+
+</head>
+<body>
+    <header>
+        <h1>Meu Site</h1>
+        <i id="menu" class="material-icons" onclick="clickmenu()">menu</i>
+        <menu id="items">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </menu>
+    </header>
+    <main>
+        <article>
+            <h2>Artigo 1</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta voluptates aspernatur necessitatibus, vitae blanditiis impedit esse fugit excepturi tenetur nisi, ratione corrupti accusantium inventore nam voluptate officiis omnis molestiae mollitia. Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur nulla aspernatur consequatur corrupti voluptatibus, iusto doloremque autem a culpa fuga ut! Quam, omnis corrupti velit fugiat nostrum debitis delectus vel?</p>
+        </article>
+    </main>
+    <script>
+
+        function mudouTamanho() {
+            if (window.innerWidth >= 768) {
+                items.style.display = 'block';
+            } else {
+                items.style.display = 'none';
+            }
+        }
+
+        function clickmenu() {
+            if (items.style.display == 'block') {
+                items.style.display = 'none';
+            } else {
+                items.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

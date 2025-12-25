@@ -1,0 +1,8 @@
+html {
+    background-image: url(../imagens/cev-portrait.jpg);
+    background-repeat: no-repeat;
+    background-size: max(80%, 80%);
+    background-position: left bottom;
+    background-attachment: fixed;
+    
+}
