@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sumário de Estudos - HTML & CSS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary: #3b82f6;
+        --primary-hover: #2563eb;
+        --bg: #f1f5f9;
+        --card-bg: #ffffff;
+        --text-main: #0f172a;
+        --text-muted: #64748b;
+        --border: #e2e8f0;
+        --accent: #1e293b;
+        --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+          0 2px 4px -2px rgb(0 0 0 / 0.1);
+        --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+          0 4px 6px -4px rgb(0 0 0 / 0.1);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: var(--bg);
+        color: var(--text-main);
+        line-height: 1.6;
+        padding: 60px 20px;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      header h1 {
+        font-size: 3rem;
+        font-weight: 800;
+        color: var(--text-main);
+        margin-bottom: 15px;
+        letter-spacing: -0.04em;
+      }
+
+      header p {
+        font-size: 1.25rem;
+        color: var(--text-muted);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+      }
+
+      .module-card {
+        background: var(--card-bg);
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: var(--shadow);
+        border: 1px solid var(--border);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .module-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--primary);
+      }
+
+      .module-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+        padding-bottom: 20px;
+        border-bottom: 2px solid var(--bg);
+      }
+
+      .module-icon {
+        width: 48px;
+        height: 48px;
+        background: linear-gradient(
+          135deg,
+          var(--primary),
+          var(--primary-hover)
+        );
+        color: white;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 1.2rem;
+        margin-right: 18px;
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+      }
+
+      .module-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--text-main);
+      }
+
+      .section-label {
+        font-size: 0.8rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: var(--primary);
+        margin: 20px 0 12px 0;
+        display: block;
+        letter-spacing: 0.1em;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      li {
+        margin-bottom: 8px;
+      }
+
+      .link-item {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: var(--accent);
+        padding: 10px 14px;
+        border-radius: 10px;
+        transition: all 0.2s ease;
+        font-size: 0.95rem;
+        font-weight: 500;
+        background: transparent;
+      }
+
+      .link-item:hover {
+        background-color: var(--bg);
+        color: var(--primary);
+        padding-left: 18px;
+      }
+
+      .link-item svg {
+        width: 18px;
+        height: 18px;
+        margin-right: 12px;
+        stroke-width: 2;
+        opacity: 0.6;
+        transition: all 0.2s ease;
+      }
+
+      .link-item:hover svg {
+        opacity: 1;
+        stroke: var(--primary);
+        transform: scale(1.1);
+      }
+
+      footer {
+        margin-top: 100px;
+        text-align: center;
+        color: var(--text-muted);
+        font-size: 1rem;
+        padding-bottom: 40px;
+      }
+
+      @media (max-width: 768px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+        header h1 {
+          font-size: 2.2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Sumário de Estudos</h1>
+        <p>
+          Uma coleção organizada de todos os projetos e exercícios desenvolvidos
+          durante o curso de HTML5 e CSS3 do <a href="https://www.youtube.com/@CursoemVideo" target="_blank">Curso em Video</a>.
+        </p>
+      </header>
+
+      <main class="grid">
+        <!-- Módulo 1 -->
+        <section class="module-card">
+          <div class="module-header">
+            <div class="module-icon">01</div>
+            <div class="module-title">Módulo 1</div>
+          </div>
+
+          <span class="section-label">Desafios</span>
+          <ul>
+            <li>
+              <a class="link-item" href="modulo1/desafios/desafio 1/index.html"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path
+                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                  ></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                </svg>
+                Desafio 01 - Mensagens</a
+              >
+            </li>
+            <li>
+              <a class="link-item" href="modulo1/desafios/desafio 3/index.html"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path
+                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                  ></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                </svg>
+                Desafio 03 - Mapa Mundi</a
+              >
+            </li>
+            <li>
+              <a class="link-item" href="modulo1/desafios/desafio 5/index.html"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path
+                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                  ></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                </svg>
+                Desafio 05 - Redes Sociais</a
+              >
+            </li>
+            <li>
+              <a class="link-item" href="modulo1/desafios/desafio 6/index.html"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path
+                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                  ></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                </svg>
+                Desafio 06 - Tags HTML</a
+              >
+            </li>
+            <li>
+              <a class="link-item" href="modulo1/desafios/desafio 9/index.html"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path
+                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                  ></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                </svg>
+                Desafio 09 - Vídeos</a
+              >
+            </li>
+          </ul>
+
+          <span class="section-label">Exercícios Principais</span>
+          <ul>
+            <li>
+              <a
+                class="link-item"
+                href="modulo1/exercicios/ex001 4-2/index.html"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                Ex 001 - Primeiro Passo</a
+              >
+            </li>
+            <li>
+              <a
+                class="link-item"
+                href="modulo1/exercicios/ex003 6-4/index.html"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                Ex 003 - Imagens</a
+              >
+            </li>
+            <li>
+              <a
+                class="link-item"
+                href="modulo1/exercicios/ex006 7-1/index.html"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                Ex 006 - Hierarquia</a
+              >
+            </li>
+            <li>
+              <a
+                class="link-item"
+                href="modulo1/exercicios/ex010 10-1/index.html"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                Ex 010 - Links Externos</a
+              >
+            </li>
+            <li>
+              <a
+                class="link-item"
+                href="modulo1/exercicios/ex013 12-1/index.html"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                Ex 013 - Estilos CSS</a
+              >
+            </li>
+          </ul>
+        </section>
+
+        <!-- Módulo 2 -->
+        <section class="module-card">
+          <div class="module-header">
+            <div class="module-icon">02</div>
+            <div class="module-title">Módulo 2</div>
+          </div>
+
+          <span class="section-label">Projetos</span>
+          <ul>
+            <li>
+              <a class="link-item" href="modulo2/desafios/android/android.html"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                  <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                </svg>
+                📱 Projeto Android</a
+              >
+            </li>
+          </ul>
+
+          <span class="section-label">Exercícios Avançados</span>
+          <ul>
+            <li>
+              <a class="link-item" href="modulo2/ex016 13-2/index.html"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                Ex 016 - Cores & Paletas</a
+              >
+            </li>
+            <li>
+              <a class="link-item" href="modulo2/ex018 14-3/index.html"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                Ex 018 - Google Fonts</a
+              >
+            </li>
+            <li>
+              <a class="link-item" href="modulo2/ex020 14-7/index.html"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                Ex 020 - Grouping Tags</a
+              >
+            </li>
+            <li>
+              <a class="link-item" href="modulo2/ex023 15-4/index.html"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                Ex 023 - Pseudo-classes</a
+              >
+            </li>
+            <li>
+              <a class="link-item" href="modulo2/ex024 16-1/box-models.html"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                Ex 024 - Box Models</a
+              >
+            </li>
+            <li>
+              <a class="link-item" href="modulo2/ex025 16-6/iindex.html"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                Ex 025 - Iframe Embed</a
+              >
+            </li>
+          </ul>
+        </section>
+
+        <!-- Módulo 3 -->
+        <section class="module-card">
+          <div class="module-header">
+            <div class="module-icon">03</div>
+            <div class="module-title">Módulo 3</div>
+          </div>
+
+          <span class="section-label">Projetos Criativos</span>
+          <ul>
+            <li>
+              <a
+                class="link-item"
+                href="modulo3/Desafios/projeto-cordel/index.html"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                </svg>
+                📜 Projeto Cordel</a
+              >
+            </li>
+          </ul>
+
+          <span class="section-label">Conteúdo Estruturado</span>
+          <ul>
+            <li>
+              <a
+                class="link-item"
+                href="modulo3/Exercicios/ex022 19-1/index.html"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                Ex 022 - Imagens de Fundo</a
+              >
+            </li>
+            <li>
+              <a
+                class="link-item"
+                href="modulo3/Exercicios/ex023 21-1/tabela002.html"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                Ex 023 - Tabelas de Dados</a
+              >
+            </li>
+            <li>
+              <a
+                class="link-item"
+                href="modulo3/Exercicios/ex023 21-1/tabela005.html"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                Ex 023 - Responsividade</a
+              >
+            </li>
+          </ul>
+        </section>
+
+        <!-- Módulo 4 -->
+        <section class="module-card">
+          <div class="module-header">
+            <div class="module-icon">04</div>
+            <div class="module-title">Módulo 4</div>
+          </div>
+
+          <span class="section-label">Interatividade</span>
+          <ul>
+            <li>
+              <a class="link-item" href="modulo4/exercicios/ex024/ex024.html"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="3" y1="9" x2="21" y2="9"></line>
+                </svg>
+                Ex 024 - Desvendando Iframes</a
+              >
+            </li>
+            <li>
+              <a class="link-item" href="modulo4/exercicios/ex025/form002.html"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path
+                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                  ></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                </svg>
+                Ex 025 - Formulários Complexos</a
+              >
+            </li>
+            <li>
+              <a
+                class="link-item"
+                href="modulo4/exercicios/ex026/mq004/index.html"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                </svg>
+                Ex 026 - Media Queries Pro</a
+              >
+            </li>
+            <li>
+              <a
+                class="link-item"
+                href="modulo4/exercicios/ex027/login/index.html"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                Projeto Tela de Login</a
+              >
+            </li>
+          </ul>
+        </section>
+
+        <!-- Módulo 5 -->
+        <section class="module-card">
+          <div class="module-header">
+            <div class="module-icon">05</div>
+            <div class="module-title">Módulo 5</div>
+          </div>
+
+          <span class="section-label">Layout Moderno</span>
+          <ul>
+            <li>
+              <a
+                class="link-item"
+                href="modulo5/exercicios/ex027/flex/flex001.html"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                </svg>
+                Flexbox - Fundamentos</a
+              >
+            </li>
+            <li>
+              <a
+                class="link-item"
+                href="modulo5/exercicios/ex027/flex/menu.html"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <line x1="3" y1="12" x2="21" y2="12"></line>
+                  <line x1="3" y1="6" x2="21" y2="6"></line>
+                  <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+                Layout de Menu Responsivo</a
+              >
+            </li>
+            <li>
+              <a
+                class="link-item"
+                href="modulo5/exercicios/ex027/flex002/index.html"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                </svg>
+                Flexbox - Containers</a
+              >
+            </li>
+          </ul>
+        </section>
+      </main>
+
+      <footer>
+        <p>Desenvolvido por João Lucas</p>
+      </footer>
+    </div>
+  </body>
+</html>

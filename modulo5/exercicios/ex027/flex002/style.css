@@ -37,11 +37,14 @@ article > div.text {
     flex: 1 1 500px;
 }
 
-div.media {
-    background-color: bisque;
+article > div.media {
     display: flex;
-    flex: auto;
+    flex: 1 0 500px;
+
+    background-color: bisque;
+    
     height: 250px;
+
     text-align: center;
     justify-content: center;
     align-items: center;
